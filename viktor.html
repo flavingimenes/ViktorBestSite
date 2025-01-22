@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viktor</title>
+  <style>
+
+    .body{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        height: 900px;
+        align-items: center;
+    }
+
+    .hover-image {
+      cursor: pointer;
+      width: 600px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body class="body">
+  <img src="viktormeme/images-removebg-preview (2).png" alt="Imagem de teste" class="hover-image" id="hoverImage">
+  <audio id="hoverSound" src="viktormeme/viktor.mp3"></audio>
+
+  <script>
+    // Obtém a imagem e o áudio
+    const image = document.getElementById('hoverImage');
+    const sound = document.getElementById('hoverSound');
+
+    // Adiciona o evento de mouseover para reproduzir o som
+    image.addEventListener('mouseenter', () => {
+      sound.currentTime = 0; // Reinicia o som
+      sound.play();
+    });
+
+    // Adiciona o evento de mouseleave para pausar o som
+    image.addEventListener('mouseleave', () => {
+      sound.pause();
+    });
+  </script>
+</body>
+</html>
